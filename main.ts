@@ -27,6 +27,7 @@ if (ENTRY.trim().length === 0) {
 
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outputDir, { recursive: true });
+// No trailing newline: the gate counts the entry itself, nothing extra.
 writeFileSync(join(outputDir, "entry.txt"), ENTRY, "utf8");
 console.log(
   `wrote ${ENTRY.length}-character entry to ${join(outputDir, "entry.txt")}`,
